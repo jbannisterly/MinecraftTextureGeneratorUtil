@@ -1,4 +1,3 @@
-import cv2
 import numpy as np
 
 class Cube:
@@ -31,15 +30,3 @@ class Cube:
         self.down = np.tile(self.forward[-1:, :, :], (self.z, 1, 1))
         self.right = np.tile(self.forward[:, 0:1, :], (1, self.z, 1))
         self.left = np.tile(self.forward[:, -1:, :], (1, self.z, 1))
-
-
-
-example = cv2.imread("res/example.png")
-
-# example values
-atlas = np.zeros((32, 32, 3))
-cube = Cube()
-cube.stretch(example, [8, 4, 6], [2, 4])
-cube.writeimage(atlas, [3,3])
-
-cv2.imwrite("res/example_copy.png", atlas)
