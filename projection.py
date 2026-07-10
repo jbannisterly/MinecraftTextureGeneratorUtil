@@ -19,3 +19,6 @@ for cube in cubes:
     atlas.addCube(example, cube, [16 - cube[0], 16 - cube[1]])
 
 cv2.imwrite("res/example_copy.png", atlas.atlas)
+
+print("Texture offsets")
+print(atlas.offsets)

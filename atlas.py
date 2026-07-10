@@ -7,6 +7,7 @@ class Atlas:
         self.atlas = np.zeros(atlas_size)
         self.offset = [0, 0]
         self.max_width = 0
+        self.offsets = []
 
     def addCube(self, source_image, size, offset):
         cube = Cube()
@@ -16,4 +17,5 @@ class Atlas:
             self.offset = [self.max_width + self.offset[0], 0]
             self.max_width = 0
         cube.writeimage(self.atlas, self.offset)
+        self.offsets.append(self.offset.copy())
         self.offset[1] += cube.z + cube.y
