@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from atlas import Atlas
 import sphere_generator
+import code_gen
 
 example = cv2.imread("res/example.png")
 
@@ -14,5 +15,4 @@ for cube in cubes:
 
 cv2.imwrite("res/example_copy.png", atlas.atlas)
 
-print("Texture offsets")
-print(atlas.offsets)
+code_gen.genCode(atlas.offsets, cubes)
