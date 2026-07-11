@@ -19,5 +19,3 @@ def createCubes(grid, size: int):
                 if grid[i, j, k] == 1 and grid[i + 1, j, k] == 0 and grid[i, j + 1, k] == 0 and grid[i, j, k + 1] == 0:
                     cubeList.append((i + 1, j + 1, k + 1))
     return cubeList
-
-print(createCubes(fillGrid(8), 8))
